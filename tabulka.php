@@ -16,11 +16,13 @@
     <tbody>
         <?php
             if(isset($_GET['sort'])){
-                usort($lide,function ($a,$b) {return strcmp($a->$_GET['sort'], $b->$_GET['sort']);});
+                usort($lide, function($a, $b){
+                    $param = $_GET['sort'];
+                    return strcmp($a->$param, $b->$param);
+                });
             }
 
             foreach ($lide as $id => $radek) {
-                if ($id == 0) continue;
                 echo '<tr>';
                 foreach ($radek as $sloupec) {
                     echo "<td>$sloupec</td>";
