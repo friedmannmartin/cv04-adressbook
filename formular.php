@@ -1,6 +1,6 @@
-<form action="/index.php" method="post">
-    <label>Jméno:    <input type="text" name="jmeno"    value='<?=$clovek->jmeno?>'></label>
-    <label>Příjmení: <input type="text" name="prijmeni" value='<?=$clovek->prijmeni?>'></label>
+<form name="osoba" action="/index.php" method="post" onsubmit="return validace()">
+    <label>Jméno:    <input type="text" name="jmeno"    value='<?=$clovek->jmeno?>' required></label>
+    <label>Příjmení: <input type="text" name="prijmeni" value='<?=$clovek->prijmeni?>' required></label>
 
     <fieldset>
         <legend>Pohlaví</legend>
@@ -9,8 +9,8 @@
     </fieldset>
 
     <label>Ulice:   <input type="text"  name="ulice"   value='<?=$clovek->ulice?>'></label>
-    <label>Obec:    <input type="text"  name="obec"    value='<?=$clovek->obec?>'></label>
-    <label>PSČ:     <input type="text"  name="psc"     value='<?=$clovek->psc?>'></label>
+    <label>Obec:    <input type="text"  name="obec"    value='<?=$clovek->obec?>' required></label>
+    <label>PSČ:     <input type="text"  name="psc"     value='<?=$clovek->psc?>' required></label>
     <label>Telefon: <input type="tel"   name="telefon" value='<?=$clovek->telefon?>'></label>
     <label>E-mail:  <input type="email" name="email"   value='<?=$clovek->email?>'></label>
     <label>Pozice:  <input type="text"  name="pozice"  value='<?=$clovek->pozice?>'></label>
@@ -28,6 +28,7 @@
             ?>
         </select>
     </label>
-
+    
     <input type="submit" value="Uložit">
 </form>
+<script src="./validace.js"></script>
