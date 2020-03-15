@@ -1,4 +1,4 @@
-<form name="osoba" action="/index.php" method="post" onsubmit="return validace()">
+<form name="osoba" action="./index.php" method="post" onsubmit="return validace()">
     <label>Jméno:    <input type="text" name="jmeno"    value='<?=$clovek->jmeno?>' required></label>
     <label>Příjmení: <input type="text" name="prijmeni" value='<?=$clovek->prijmeni?>' required></label>
 
@@ -28,7 +28,7 @@
             ?>
         </select>
     </label>
-    
+
     <input type="submit" value="Uložit">
 </form>
 <script src="./validace.js"></script>
