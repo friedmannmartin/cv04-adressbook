@@ -15,7 +15,7 @@ class Osoba {
         return $this->jmeno . ' ' . $this->prijmeni;
     }
 
-    public function __toArray() {
+    public function toArray() {
         return (array) $this;
     }
 }
