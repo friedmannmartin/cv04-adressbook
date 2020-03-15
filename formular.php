@@ -28,7 +28,7 @@
             ?>
         </select>
     </label>
-
+    <input type="hidden" name="id" value="<?=(isset($_GET['id'])?$_GET['id']:'null')?>">
     <input type="submit" value="Uložit">
 </form>
 <script src="./validace.js"></script>

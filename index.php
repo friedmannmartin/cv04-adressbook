@@ -10,6 +10,7 @@
     </head>
     <body>
         <?php
+            //Načítání osob se souboru
             $soubor = fopen("adresar.csv","r+");
             while(($radek = fgetcsv($soubor,0,';')) !== FALSE){
                 $_lide[] = new Osoba();
@@ -26,22 +27,26 @@
             }
             fclose($soubor);
 
+
+            //Transformace seznamu lidí
             $lide['zahlavi'] = $_lide[0];
             for ($i=1; $i < count($_lide); $i++) {
                 $lide[$i]=$_lide[$i];
             }
-        ?>
 
 
+            //Vytváření osoby
+            if (isset($_POST['id'])){
 
+            }
 
-
-        <?php
+            //Editace osoby
             if (isset($_GET['id'])){
                 $clovek = $lide[$_GET['id']];
             } else {
                 $clovek = new Osoba();
             }
+
 
             include 'formular.php';
             include 'tabulka.php';
