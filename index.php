@@ -29,12 +29,19 @@
 
 
             //Zápis osoby do souboru
-            if (isset($_POST['id'])){
-                if ($_POST['id'] === 'new'){
+            if (isset($_POST['osoba'])){
+                if ($_POST['osoba'] === 'new'){
                     $lide[] = new Osoba();
                     $id = array_key_last($lide); //ID nově vytvořené osoby
                 } else {
-                    $id = $_POST['id'];          //ID upravované osoby
+                    //ID upravované osoby
+                    $id;
+                    foreach ($lide as $index => $osoba) {
+                        if ($osoba == $_POST['osoba']) {
+                            $id = $index;
+                            break;
+                        }
+                    }
                 }
                 $lide[$id]->jmeno     = $_POST['jmeno'];
                 $lide[$id]->prijmeni  = $_POST['prijmeni'];

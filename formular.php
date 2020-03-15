@@ -40,7 +40,7 @@
             ?>
         </select>
     </label>
-    <input type="hidden" name="id" value="<?=(isset($_GET['id'])?$_GET['id']:'new')?>">
+    <input type="hidden" name="osoba" value="<?=(isset($_GET['osoba'])? $_GET['osoba']:'new')?>">
     <input type="submit" value="Uložit">
 </form>
 <script src="./validace.js"></script>
