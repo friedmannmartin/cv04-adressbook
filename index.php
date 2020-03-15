@@ -27,7 +27,12 @@
 
 
         <?php
-            $clovek = $lide[1];
+            if (isset($_GET['id'])){
+                $clovek = $lide[$_GET['id']];
+            } else {
+                $clovek = new Osoba();
+            }
+
             include 'formular.php';
             include 'tabulka.php';
         ?>
