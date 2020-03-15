@@ -1,15 +1,13 @@
-<?php
-    require_once 'osoba.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Seznam Zaměstnanců</title>
     </head>
     <body>
         <?php
+            require_once 'osoba.php';
 
             $soubor = fopen("adresar.csv","r+");
 
@@ -32,7 +30,6 @@
             if (isset($_POST['id'])){
                 if ($_POST['id'] === 'new'){
                     $lide[] = new Osoba();
-                    //array_push($lide,new Osoba());
                     $id = array_key_last($lide); //ID nově vytvořené osoby
                 } else {
                     $id = $_POST['id'];          //ID upravované osoby
@@ -53,6 +50,9 @@
             }
 
             fclose($soubor);
+
+            //Odstranění záhlaví
+            $lideBezZahlavi = array_slice($lide,1);
 
             include 'formular.php';
             include 'tabulka.php';

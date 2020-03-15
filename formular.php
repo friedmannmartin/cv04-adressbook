@@ -1,7 +1,7 @@
 <?php
     //Předvyplnění formuláře existující osoby
     if (isset($_GET['id'])){
-        $clovek = $lide[$_GET['id']];
+        $clovek = $lideBezZahlavi[$_GET['id']];
     } else {
         $clovek = new Osoba();
     }
@@ -27,9 +27,8 @@
         <select name="nadrizeny">
             <option value=""></option>
             <?php
-                foreach ($lide as $id => $nadrizeny) {
-                    if ($id == 0) continue;
-                    echo '<option value="' . $nadrizeny . '"' . ($nadrizeny == $clovek->nadrizeny? ' selected>':'>');
+                foreach ($lideBezZahlavi as $id => $nadrizeny) {
+                    echo '<option value="' . $nadrizeny . '"' . ($nadrizeny == $clovek->nadrizeny ? ' selected>':'>');
                     echo $nadrizeny;
                     echo "</option>\n";
                 }

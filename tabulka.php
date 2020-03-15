@@ -15,14 +15,17 @@
     </thead>
     <tbody>
         <?php
+
+            //Nastavení řazení
             if(isset($_GET['sort'])){
-                usort($lide, function($a, $b){
+                usort($lideBezZahlavi, function($a, $b){
                     $param = $_GET['sort'];
                     return strcmp($a->$param, $b->$param);
                 });
             }
 
-            foreach ($lide as $id => $radek) {
+            //výpis jednotlivých uživatelů po řádcích
+            foreach ($lideBezZahlavi as $id => $radek) {
                 echo '<tr>';
                 foreach ($radek as $sloupec) {
                     echo "<td>$sloupec</td>";
@@ -30,6 +33,7 @@
                 echo "<td><a href='./index.php?id=$id'>⚙️</a></td>";
                 echo "</tr>\n";
             }
+
         ?>
     </tbody>
 </table>
