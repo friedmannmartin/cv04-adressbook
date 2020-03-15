@@ -10,43 +10,48 @@
     </head>
     <body>
         <?php
-            //Načítání osob se souboru
+
             $soubor = fopen("adresar.csv","r+");
-            while(($radek = fgetcsv($soubor,0,';')) !== FALSE){
-                $_lide[] = new Osoba();
-                end($_lide)->jmeno = $radek[0];
-                end($_lide)->prijmeni = $radek[1];
-                end($_lide)->pohlavi = $radek[2];
-                end($_lide)->ulice = $radek[3];
-                end($_lide)->obec = $radek[4];
-                end($_lide)->psc = $radek[5];
-                end($_lide)->telefon = $radek[6];
-                end($_lide)->email = $radek[7];
-                end($_lide)->pozice = $radek[8];
-                end($_lide)->nadrizeny = $radek[9];
-            }
-            fclose($soubor);
 
-
-            //Transformace seznamu lidí
-            $lide['zahlavi'] = $_lide[0];
-            for ($i=1; $i < count($_lide); $i++) {
-                $lide[$i]=$_lide[$i];
+            //Čtení osob ze souboru
+            while(($radek = fgetcsv($soubor,0,';')) !== false){
+                $lide[] = new Osoba();
+                end($lide)->jmeno     = $radek[0];
+                end($lide)->prijmeni  = $radek[1];
+                end($lide)->pohlavi   = $radek[2];
+                end($lide)->ulice     = $radek[3];
+                end($lide)->obec      = $radek[4];
+                end($lide)->psc       = $radek[5];
+                end($lide)->telefon   = $radek[6];
+                end($lide)->email     = $radek[7];
+                end($lide)->pozice    = $radek[8];
+                end($lide)->nadrizeny = $radek[9];
             }
 
-
-            //Vytváření osoby
+            //Zápis osoby do souboru
             if (isset($_POST['id'])){
-
+                if ($_POST['id'] === 'new'){
+                    $lide[] = new Osoba();
+                    $id = array_key_last($lide); //ID nově vytvořené osoby
+                } else {
+                    $id = $_POST['id'];          //ID upravované osoby
+                }
+                $lide[$id]->jmeno     = $_POST['jmeno'];
+                $lide[$id]->prijmeni  = $_POST['prijmeni'];
+                $lide[$id]->pohlavi   = $_POST['pohlavi'];
+                $lide[$id]->ulice     = $_POST['ulice'];
+                $lide[$id]->obec      = $_POST['obec'];
+                $lide[$id]->psc       = $_POST['psc'];
+                $lide[$id]->telefon   = $_POST['telefon'];
+                $lide[$id]->email     = $_POST['email'];
+                $lide[$id]->pozice    = $_POST['pozice'];
+                $lide[$id]->nadrizeny = $_POST['nadrizeny'];
+                foreach ($lide as $radek) {
+                    fputcsv($soubor,$radek,';');
+                }
             }
 
-            //Editace osoby
-            if (isset($_GET['id'])){
-                $clovek = $lide[$_GET['id']];
-            } else {
-                $clovek = new Osoba();
-            }
-
+            fclose($soubor);
 
             include 'formular.php';
             include 'tabulka.php';
