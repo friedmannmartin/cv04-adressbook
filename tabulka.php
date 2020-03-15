@@ -11,6 +11,7 @@
             <th><a href="./index.php?sort=email">E-mail</a></th>
             <th><a href="./index.php?sort=pozice">Pozice</a></th>
             <th><a href="./index.php?sort=nadrizeny">Nadřízený</a></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>

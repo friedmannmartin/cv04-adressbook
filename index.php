@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
         <title>Seznam Zaměstnanců</title>
     </head>
     <body>
@@ -63,8 +64,8 @@
             //Odstranění záhlaví
             $lideBezZahlavi = array_slice($lide,1);
 
-            include 'formular.php';
             include 'tabulka.php';
+            include 'formular.php';
 
         ?>
     </body>
