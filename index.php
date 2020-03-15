@@ -9,8 +9,10 @@
         <?php
             require_once 'osoba.php';
 
+            $lide = array();
+            $soubor = fopen("adresar.csv","r+");
+
             //Čtení osob ze souboru
-            $soubor = fopen("adresar.csv","r");
             while(($radek = fgetcsv($soubor,0,';')) !== false){
                 $lide[] = new Osoba();
                 end($lide)->jmeno     = $radek[0];
@@ -24,11 +26,9 @@
                 end($lide)->pozice    = $radek[8];
                 end($lide)->nadrizeny = $radek[9];
             }
-            fclose($soubor);
 
 
             //Zápis osoby do souboru
-            $soubor = fopen("adresar.csv","w");
             if (isset($_POST['id'])){
                 if ($_POST['id'] === 'new'){
                     $lide[] = new Osoba();
@@ -46,6 +46,7 @@
                 $lide[$id]->email     = $_POST['email'];
                 $lide[$id]->pozice    = $_POST['pozice'];
                 $lide[$id]->nadrizeny = $_POST['nadrizeny'];
+                rewind($soubor);
                 foreach ($lide as $radek) {
                     fputcsv($soubor,$radek->toArray(),';');
                 }
