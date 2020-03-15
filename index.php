@@ -47,7 +47,7 @@
                 $lide[$id]->pozice    = $_POST['pozice'];
                 $lide[$id]->nadrizeny = $_POST['nadrizeny'];
                 foreach ($lide as $radek) {
-                    fputcsv($soubor,$radek,';');
+                    fputcsv($soubor,$radek->__toArray(),';');
                 }
             }
 

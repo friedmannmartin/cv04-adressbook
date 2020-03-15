@@ -14,4 +14,8 @@ class Osoba {
     public function __toString() {
         return $this->jmeno . ' ' . $this->prijmeni;
     }
+
+    public function __toArray() {
+        return (array) $this;
+    }
 }
