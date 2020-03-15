@@ -1,7 +1,12 @@
 <?php
     //Předvyplnění formuláře existující osoby
-    if (isset($_GET['id'])){
-        $clovek = $lideBezZahlavi[$_GET['id']];
+    if (isset($_GET['osoba'])){
+        foreach ($lideBezZahlavi as $osoba) {
+            if ($osoba == $_GET['osoba']) {
+                $clovek = $osoba;
+                break;
+            }
+        }
     } else {
         $clovek = new Osoba();
     }

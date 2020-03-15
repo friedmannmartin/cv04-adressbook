@@ -25,12 +25,12 @@
             }
 
             //výpis jednotlivých uživatelů po řádcích
-            foreach ($lideBezZahlavi as $id => $radek) {
+            foreach ($lideBezZahlavi as $radek) {
                 echo '<tr>';
                 foreach ($radek as $sloupec) {
                     echo "<td>$sloupec</td>";
                 }
-                echo "<td><a href='./index.php?id=$id'>⚙️</a></td>";
+                echo "<td><a href='./index.php?osoba=$radek'>⚙️</a></td>";
                 echo "</tr>\n";
             }
 
