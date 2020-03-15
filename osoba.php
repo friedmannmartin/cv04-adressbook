@@ -24,7 +24,7 @@ class Osoba {
         $this->nadrizeny = $nadrizeny;
     }
 
-    public function celeJmeno() {
+    public function __toString() {
         return $this->jmeno . ' ' . $this->prijmeni;
     }
 }

@@ -17,11 +17,12 @@
 
     <label>Nadřízený:
         <select name="nadrizeny">
+            <option value=""></option>
             <?php
                 foreach ($lide as $klic => $nadrizeny) {
                     if ($klic === 'zahlavi'){continue;}
-                    echo '<option value="' . $nadrizeny->celeJmeno() . '"' . ($nadrizeny->celeJmeno() == $clovek->nadrizeny? ' selected>':'>');
-                    echo $nadrizeny->celeJmeno();
+                    echo '<option value="' . $nadrizeny . '"' . ($nadrizeny == $clovek->nadrizeny? ' selected>':'>');
+                    echo $nadrizeny;
                     echo "</option>\n";
                 }
             ?>
