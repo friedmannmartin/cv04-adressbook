@@ -1,3 +1,11 @@
+<?php
+    //Předvyplnění formuláře existující osoby
+    if (isset($_GET['id'])){
+        $clovek = $lide[$_GET['id']];
+    } else {
+        $clovek = new Osoba();
+    }
+?>
 <form name="osoba" action="./index.php" method="post" onsubmit="return validace()">
     <label>Jméno:    <input type="text" name="jmeno"    value='<?=$clovek->jmeno?>' required></label>
     <label>Příjmení: <input type="text" name="prijmeni" value='<?=$clovek->prijmeni?>' required></label>
@@ -19,8 +27,8 @@
         <select name="nadrizeny">
             <option value=""></option>
             <?php
-                foreach ($lide as $klic => $nadrizeny) {
-                    if ($klic === 'zahlavi'){continue;}
+                foreach ($lide as $id => $nadrizeny) {
+                    if ($id == 0) continue;
                     echo '<option value="' . $nadrizeny . '"' . ($nadrizeny == $clovek->nadrizeny? ' selected>':'>');
                     echo $nadrizeny;
                     echo "</option>\n";
