@@ -5,10 +5,11 @@ body {
   display: flex;
   font-family: sans-serif;
   color: #00395A;
+  position: relative;
 }
 
 table {
-  width: 66vw;
+  width: 1280px;
   min-height: 100vh;
   border-collapse: collapse;
 }
@@ -16,6 +17,10 @@ table {
 table a {
   text-decoration: none;
   color: #ffffff;
+}
+
+table a:hover {
+  color: #AEC6CF;
 }
 
 table tr:nth-child(odd) {
@@ -36,8 +41,11 @@ table td, table th {
 }
 
 form {
-  width: 33vw;
+  width: 640px;
   height: 100vh;
+  top: 0;
+  right: 0;
+  position: fixed;
   background: #0067A5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -70,6 +78,8 @@ form legend {
 form fieldset {
   text-align: center;
   border-radius: 5px;
+  border: 2px solid #00395A;
+  margin: 2px 0 12px 0;
 }
 
 form input[type=text], form input[type=email], form input[type=tel], form input[type=submit], form select {
@@ -79,6 +89,18 @@ form input[type=text], form input[type=email], form input[type=tel], form input[
           box-sizing: border-box;
   margin: 2px 0 12px 0;
   padding: 10px;
-  border: 2px solid #1b262c;
+  border: 2px solid #00395A;
+}
+
+form input[type=submit] {
+  background: #00395A;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+form input[type=submit]:hover {
+  cursor: pointer;
+  background: #AEC6CF;
+  color: #00395A;
 }
 /*# sourceMappingURL=style.css.map */

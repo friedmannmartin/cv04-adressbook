@@ -8,17 +8,21 @@ body {
     display: flex;
     font-family: sans-serif;
     color: $dark;
+    position: relative;
 }
 
 
 table {
-    width:  66vw;
+    width:  1280px;
     min-height: 100vh;
     border-collapse: collapse;
 
     a {
         text-decoration: none;
         color: $white;
+        &:hover{
+            color: $light;
+        }
     }
 
     tr:nth-child(odd) {
@@ -38,8 +42,12 @@ table {
 
 
 form {
-    width:  33vw;
+    width:  640px;
     height: 100vh;
+
+    top: 0;
+    right: 0;
+    position: fixed;
 
     background: $primary;
 
@@ -63,6 +71,8 @@ form {
     fieldset{
         text-align: center;
         border-radius: 5px;
+        border: 2px solid $dark;
+        margin: 2px 0 12px 0;
     }
 
     input[type=text],input[type=email],input[type=tel],input[type=submit],select {
@@ -71,6 +81,16 @@ form {
         box-sizing: border-box;
         margin: 2px 0 12px 0;
         padding: 10px;
-        border: 2px solid #1b262c;
+        border: 2px solid $dark;
+    }
+    input[type=submit]{
+        background:  $dark;
+        color: $white;
+        font-weight: bold;
+        &:hover{
+            cursor: pointer;
+            background: $light;
+            color: $dark;
+        }
     }
 }
