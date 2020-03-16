@@ -31,7 +31,7 @@
                 foreach ($radek as $sloupec) {
                     echo "<td>$sloupec</td>";
                 }
-                echo "<td><a href='./index.php?osoba=$radek'>⚙️</a></td>";
+                echo "<td><a href='./index.php?osoba=$radek'>🛠️</a></td>";
                 echo "</tr>\n";
             }
 

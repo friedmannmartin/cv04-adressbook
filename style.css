@@ -4,42 +4,44 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-family: sans-serif;
+  color: #00395A;
 }
 
 table {
-  width: 70%;
+  width: 66vw;
+  min-height: 100vh;
   border-collapse: collapse;
 }
 
-table tr:nth-child(odd) {
-  background: #bbe1fa;
-}
-
-table tr:nth-child(even) {
-  background: #3282b8;
-}
-
-table th {
-  background: #1b262c;
-  padding: 20px 0;
-}
-
-table th a {
+table a {
   text-decoration: none;
   color: #ffffff;
 }
 
-table td {
+table tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+table tr:nth-child(even) {
+  background: #AEC6CF;
+}
+
+table th {
+  background: #0067A5;
+}
+
+table td, table th {
   padding: 10px;
-  border: 2px solid #1b262c;
+  border: 2px solid #0067A5;
 }
 
 form {
+  width: 33vw;
+  height: 100vh;
+  background: #0067A5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 30%;
-  height: 100vh;
-  padding: 30px;
+  padding: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,5 +52,33 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+form h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+form label, form fieldset {
+  color: #ffffff;
+}
+
+form legend {
+  text-align: left;
+}
+
+form fieldset {
+  text-align: center;
+  border-radius: 5px;
+}
+
+form input[type=text], form input[type=email], form input[type=tel], form input[type=submit], form select {
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 2px 0 12px 0;
+  padding: 10px;
+  border: 2px solid #1b262c;
 }
 /*# sourceMappingURL=style.css.map */
