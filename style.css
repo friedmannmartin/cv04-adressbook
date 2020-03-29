@@ -8,40 +8,46 @@ body {
   position: relative;
 }
 
-table {
-  width: 1280px;
+div {
+  width: 65vw;
   min-height: 100vh;
+  overflow: auto;
+}
+
+div table {
+  width: 100%;
+  min-height: 100%;
   border-collapse: collapse;
 }
 
-table a {
+div table a {
   text-decoration: none;
   color: #ffffff;
 }
 
-table a:hover {
+div table a:hover {
   color: #AEC6CF;
 }
 
-table tr:nth-child(odd) {
+div table tr:nth-child(odd) {
   background: #ffffff;
 }
 
-table tr:nth-child(even) {
+div table tr:nth-child(even) {
   background: #AEC6CF;
 }
 
-table th {
+div table th {
   background: #0067A5;
 }
 
-table td, table th {
+div table td, div table th {
   padding: 10px;
   border: 2px solid #0067A5;
 }
 
 form {
-  width: 640px;
+  width: 35vw;
   height: 100vh;
   top: 0;
   right: 0;
@@ -50,7 +56,7 @@ form {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 60px;
-  overflow-y: scroll;
+  overflow-y: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

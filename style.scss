@@ -11,38 +11,43 @@ body {
     position: relative;
 }
 
-
-table {
-    width:  1280px;
+div {
+    width:  65vw;
     min-height: 100vh;
-    border-collapse: collapse;
+    overflow: auto;
 
-    a {
-        text-decoration: none;
-        color: $white;
-        &:hover{
-            color: $light;
+    table {
+        width:  100%;
+        min-height: 100%;
+        border-collapse: collapse;
+
+        a {
+            text-decoration: none;
+            color: $white;
+            &:hover{
+                color: $light;
+            }
         }
-    }
 
-    tr:nth-child(odd) {
-        background: $white;
-    }
-    tr:nth-child(even) {
-        background: $light;
-    }
-    th{
-        background: $primary;
-    }
-    td, th{
-        padding: 10px;
-        border: 2px solid $primary;
+        tr:nth-child(odd) {
+            background: $white;
+        }
+        tr:nth-child(even) {
+            background: $light;
+        }
+        th{
+            background: $primary;
+        }
+        td, th{
+            padding: 10px;
+            border: 2px solid $primary;
+        }
     }
 }
 
 
 form {
-    width:  640px;
+    width:  35vw;
     height: 100vh;
 
     top: 0;
@@ -53,7 +58,7 @@ form {
 
     box-sizing: border-box;
     padding: 60px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     display: flex;
     flex-direction: column;
