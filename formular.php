@@ -18,6 +18,7 @@
 
     <fieldset>
         <legend>Pohlaví</legend>
+        <input type="radio" name="pohlavi" value="" checked hidden>
         <label>Muž  <input type="radio" name="pohlavi" value="M" <?=($clovek->pohlavi == 'M'? 'checked':'')?>></label>
         <label>Žena <input type="radio" name="pohlavi" value="Ž" <?=($clovek->pohlavi == 'Ž'? 'checked':'')?>></label>
     </fieldset>
